@@ -189,7 +189,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\SinhVien_61131562\Index.cshtml" />
     <Content Include="Views\SinhVien_61131562\Register2.cshtml" />
-    <Content Include="Views\SinhVien_61131562\UseModel.cshtml" />
+    <Content Include="Views\SinhVien_61131562\UseModel1.cshtml" />
+    <Content Include="Views\SinhVien_61131562\Register3.cshtml" />
+    <Content Include="Views\SinhVien_61131562\Register4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

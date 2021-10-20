@@ -21,12 +21,31 @@ namespace BaiTap2_61131562.Controllers
             ViewBag.Name = field["Name"];
             ViewBag.Marks = field["Marks"];
             return View(ViewBag);
-        }        public ActionResult UseModel()
-        {
-            return View();
         }
+        // cach 2
+       
         [HttpPost]
-        public ActionResult UseModel(SVModel sV)
+        public ActionResult Register3()
+        {
+            ViewBag.Id = Request["Id"];
+            ViewBag.Name = Request["Name"];
+            ViewBag.Marks = Request["Marks"];
+            return View(ViewBag);
+        }
+        // cach 3
+        
+        [HttpPost]
+        public ActionResult Register4(string Id , string Name, string Marks )
+        {
+            ViewBag.Id = Id;
+            ViewBag.Name = Name;
+            ViewBag.Marks = Marks;
+            return View(ViewBag);
+        }
+        // cach 4
+        
+        [HttpPost]
+        public ActionResult UseModel1(SVModel sV)
         {
             ViewBag.Id = sV.Id;
             ViewBag.Name = sV.Name;

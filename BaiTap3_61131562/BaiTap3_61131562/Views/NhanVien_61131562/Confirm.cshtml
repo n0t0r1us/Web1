@@ -1,0 +1,46 @@
+﻿@model BaiTap3_61131562.Models.EmpModel
+@{
+    ViewBag.Title = "Confirm";
+    Layout = null;
+}
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <td>
+            <table cellpadding="2" cellspacing="5">
+                <caption> <b> THÔNG TIN THÀNH VIÊN ĐÃ ĐĂNG KÝ</b></caption>
+
+                <tr>
+                    <td rowspan="6"><img src=@ViewBag.Avatar width="200" height="200" /> </td>
+                    <td>Mã số nhân viên: </td>
+                    <td>@ViewBag.EmpID</td>
+                </tr>
+
+
+                <tr>
+                    <td>Họ và tên: </td>
+                    <td>@ViewBag.Name</td>
+                </tr>
+
+                <tr>
+                    <td>Ngày sinh: </td>
+                    <td>@ViewBag.BirthOfDate</td>
+                </tr>
+
+                <tr>
+                    <td>Email: </td>
+                    <td>@ViewBag.Email</td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu: </td>
+                    <td>@ViewBag.Password</td>
+                </tr>
+
+                <tr>
+                    <td>Đơn vị: </td>
+                    <td>@ViewBag.Department</td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
