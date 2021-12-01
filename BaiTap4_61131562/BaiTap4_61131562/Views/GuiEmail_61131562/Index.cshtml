@@ -1,0 +1,13 @@
+﻿@model BaiTap4_61131562.Models.MailInfo
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<h2>CHỨC NĂNG GỬI EMAIL</h2>
+@using (Html.BeginForm("Index", "GuiEmail_61131562", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.EditorForModel() // Sinh ra hàng loạt thiết kế có sẳn
+    <input type="submit" value="Gửi email" />
+}
+

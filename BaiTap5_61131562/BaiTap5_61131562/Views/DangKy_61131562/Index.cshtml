@@ -1,0 +1,12 @@
+﻿@model BaiTap5_61131562.Models.EmpModel
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Thông tin thành viên đăng ký</h2>
+@using (Html.BeginForm("Index", "NhanVien_61131562", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.EditorForModel() // Sinh ra hàng loạt thiết kế có sẳn
+    <label for="InputAvatar">Ảnh đại diện</label>
+    <input type="file" style="height:30px" ; name="Avatar" accept="image/*" required />
+    <input type="submit" value="Đăng ký" />
+}
