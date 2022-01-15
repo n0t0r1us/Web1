@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "afda196a-59e5-4175-a07c-cdc409ab41dd": {
+      "ProjectGuid": "afda196a-59e5-4175-a07c-cdc409ab41dd",
+      "DisplayName": "THIDinhVu_61131562",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

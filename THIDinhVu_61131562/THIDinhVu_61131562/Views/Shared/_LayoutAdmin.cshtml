@@ -1,0 +1,52 @@
+﻿@{
+    try
+    {
+        string hoTen = Session["HoTen"].ToString();
+        if (hoTen != null)
+        {
+            ViewBag.NguoiDung = "Thông tin người dùng: " + hoTen;
+        }
+        else
+        {
+            ViewBag.NguoiDung = "Thông tin người dùng: Chưa đăng nhập ";
+        }
+    }
+    catch
+    {
+
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/styleAdmin.css" rel="stylesheet" />
+</head>
+<body style="margin-top:0px;">
+    <div id="banner" style="top:0px;position:absolute;">HỆ THỐNG QUẢN LÝ LÝ LỊCH SINH VIÊN</div>
+    <div id="menu" style="margin-top:10px;">
+        <div>
+            @Html.ActionLink("GIỚI THIỆU", "../SinhViens_61131562/GioiThieu_61131562", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("THÊM MỚI", "../SinhViens_61131562/Create", new { @class = "a" })&nbsp;|&nbsp;
+            @Html.ActionLink("DANH SÁCH", "../SinhViens_61131562/Index", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("LỚP HỌC", "../QuanTris_61131562/DangNhap", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("NGÀNH HỌC", "../NganhHocs_61131562/Index", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("TÌM KIẾM", "../SinhViens_61131562/TimKiem_61131562", new { @class = "a" })&nbsp;|&nbsp;
+            @Html.ActionLink("TÀI KHOẢN", "../QuanTris_61131562/Index", new { @class = "a" })
+            <hr style="display: block;border-top: 6px solid purple;  margin: 8px 0;" />
+        </div>
+        <div>
+            <p align="right">  @ViewBag.NguoiDung</p>
+        </div>
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        Copyright &copy; @DateTime.Now.Year
+    </div>
+</body>
+</html>
