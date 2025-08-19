@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Thi_61131562Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DocGia">
+          <Key>
+            <PropertyRef Name="MaDG" />
+          </Key>
+          <Property Name="MaDG" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="HoDG" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenDG" Type="nvarchar" MaxLength="15" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="GioiTinh" Type="bit" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="AnhDG" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaLoaiDocGia" Type="nvarchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="LoaiDocGia">
+          <Key>
+            <PropertyRef Name="MaLoaiDocGia" />
+          </Key>
+          <Property Name="MaLoaiDocGia" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="TenLoaiDocGia" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__DocGia__MaLoaiDo__267ABA7A">
+          <End Role="LoaiDocGia" Type="Self.LoaiDocGia" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DocGia" Type="Self.DocGia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiDocGia">
+              <PropertyRef Name="MaLoaiDocGia" />
+            </Principal>
+            <Dependent Role="DocGia">
+              <PropertyRef Name="MaLoaiDocGia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Thi_61131562ModelStoreContainer">
+          <EntitySet Name="DocGia" EntityType="Self.DocGia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiDocGia" EntityType="Self.LoaiDocGia" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DocGia__MaLoaiDo__267ABA7A" Association="Self.FK__DocGia__MaLoaiDo__267ABA7A">
+            <End Role="LoaiDocGia" EntitySet="LoaiDocGia" />
+            <End Role="DocGia" EntitySet="DocGia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Thi_61131562Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DocGia">
+          <Key>
+            <PropertyRef Name="MaDG" />
+          </Key>
+          <Property Name="MaDG" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HoDG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenDG" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="GioiTinh" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AnhDG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaLoaiDocGia" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LoaiDocGia" Relationship="Self.FK__DocGia__MaLoaiDo__267ABA7A" FromRole="DocGia" ToRole="LoaiDocGia" />
+        </EntityType>
+        <EntityType Name="LoaiDocGia">
+          <Key>
+            <PropertyRef Name="MaLoaiDocGia" />
+          </Key>
+          <Property Name="MaLoaiDocGia" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenLoaiDocGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DocGias" Relationship="Self.FK__DocGia__MaLoaiDo__267ABA7A" FromRole="LoaiDocGia" ToRole="DocGia" />
+        </EntityType>
+        <Association Name="FK__DocGia__MaLoaiDo__267ABA7A">
+          <End Role="LoaiDocGia" Type="Self.LoaiDocGia" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DocGia" Type="Self.DocGia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiDocGia">
+              <PropertyRef Name="MaLoaiDocGia" />
+            </Principal>
+            <Dependent Role="DocGia">
+              <PropertyRef Name="MaLoaiDocGia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Thi_61131562Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DocGias" EntityType="Self.DocGia" />
+          <EntitySet Name="LoaiDocGias" EntityType="Self.LoaiDocGia" />
+          <AssociationSet Name="FK__DocGia__MaLoaiDo__267ABA7A" Association="Self.FK__DocGia__MaLoaiDo__267ABA7A">
+            <End Role="LoaiDocGia" EntitySet="LoaiDocGias" />
+            <End Role="DocGia" EntitySet="DocGias" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Thi_61131562ModelStoreContainer" CdmEntityContainer="Thi_61131562Entities">
+          <EntitySetMapping Name="DocGias">
+            <EntityTypeMapping TypeName="Thi_61131562Model.DocGia">
+              <MappingFragment StoreEntitySet="DocGia">
+                <ScalarProperty Name="MaDG" ColumnName="MaDG" />
+                <ScalarProperty Name="HoDG" ColumnName="HoDG" />
+                <ScalarProperty Name="TenDG" ColumnName="TenDG" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AnhDG" ColumnName="AnhDG" />
+                <ScalarProperty Name="MaLoaiDocGia" ColumnName="MaLoaiDocGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiDocGias">
+            <EntityTypeMapping TypeName="Thi_61131562Model.LoaiDocGia">
+              <MappingFragment StoreEntitySet="LoaiDocGia">
+                <ScalarProperty Name="MaLoaiDocGia" ColumnName="MaLoaiDocGia" />
+                <ScalarProperty Name="TenLoaiDocGia" ColumnName="TenLoaiDocGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Thi_61131562ModelStoreContainer" CdmEntityContainer="Thi_61131562Entities">
+    <EntitySetMapping Name="DocGias">
+      <EntityTypeMapping TypeName="Thi_61131562Model.DocGia">
+        <MappingFragment StoreEntitySet="DocGia">
+          <ScalarProperty Name="MaDG" ColumnName="MaDG" />
+          <ScalarProperty Name="HoDG" ColumnName="HoDG" />
+          <ScalarProperty Name="TenDG" ColumnName="TenDG" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AnhDG" ColumnName="AnhDG" />
+          <ScalarProperty Name="MaLoaiDocGia" ColumnName="MaLoaiDocGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiDocGias">
+      <EntityTypeMapping TypeName="Thi_61131562Model.LoaiDocGia">
+        <MappingFragment StoreEntitySet="LoaiDocGia">
+          <ScalarProperty Name="MaLoaiDocGia" ColumnName="MaLoaiDocGia" />
+          <ScalarProperty Name="TenLoaiDocGia" ColumnName="TenLoaiDocGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
